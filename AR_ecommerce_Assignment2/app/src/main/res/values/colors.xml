@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6DB4F1</color>
+    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--  Text colour     -->
+    <color name="colortext">#eeeeee</color>
+
+    <!--  button colour     -->
+    <color name="color_button">#6DB4F1</color>
+
+    <!--  Actionbar colour     -->
+    <color name="coloraction">#6DB4F1</color>
+
+</resources>
