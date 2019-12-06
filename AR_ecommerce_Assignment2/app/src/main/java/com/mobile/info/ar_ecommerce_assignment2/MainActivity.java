@@ -5,14 +5,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> itemName = new ArrayList<>(Arrays.asList("Watch", "Ring", "Bracelet","Neckless"));
+    ArrayList<String> itemName = new ArrayList<>(Arrays.asList("Watch", "Ring", "Bracelet","Necklace"));
     ArrayList<Integer> itemImages = new ArrayList<>(Arrays.asList(R.drawable.watch, R.drawable.ring, R.drawable.braclet,R.drawable.neckless));
+    private VideoView mVideoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

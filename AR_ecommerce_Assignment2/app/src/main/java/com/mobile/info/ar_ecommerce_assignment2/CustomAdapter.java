@@ -36,18 +36,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
         holder.name.setText(itemName.get(position));
         holder.image.setImageResource(itemImages.get(position));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(context,ListOfItems.class);
+                Intent i = new Intent(context,ListOfItemDetails.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //add this line
-
+                i.putExtra("item",holder.name.getText().toString());
                 context.startActivity(i);
                 //Toast.makeText(context, itemName.get(position), Toast.LENGTH_SHORT).show();
             }

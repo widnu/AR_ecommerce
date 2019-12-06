@@ -1,6 +1,7 @@
 package com.mobile.info.ar_ecommerce_assignment2.sceneform;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,12 +26,10 @@ import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 import com.mobile.info.ar_ecommerce_assignment2.R;
 
-import net.i2p.android.ext.floatingactionbutton.FloatingActionButton;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class ARDropObjectActivity extends AppCompatActivity {
+public class ARDropObjectActivity extends ARDropActivity {
     private ArFragment fragment;
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
@@ -38,19 +38,20 @@ public class ARDropObjectActivity extends AppCompatActivity {
     ArFragment arFragment;
     boolean shouldAddModel = true;
 
+    private String jewellCategory = "";
+    private String productName = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ardropobject);
+
+        Intent intent = getIntent();
+        jewellCategory = intent.getStringExtra("JEWELL_CATEGORY");
+        productName = intent.getStringExtra("PRODUCT_NAME");
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-//            }
-//        });
 
         arAndroidOnTheFloor();
 
@@ -129,13 +130,30 @@ public class ARDropObjectActivity extends AppCompatActivity {
 
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
-        ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.droid_thumb);
-        andy.setContentDescription("andy");
-        andy.setOnClickListener(view -> {
-            addObject(Uri.parse("andy_dance.sfb"));
+
+        ImageView iv = new ImageView(this);
+        iv.setImageResource(R.drawable.w1);
+        iv.setContentDescription("watch 1");
+        iv.setOnClickListener(view -> {
+            addObject(getARObjectByJewellCategory(jewellCategory));
         });
-        gallery.addView(andy);/*        ImageView cabin = new ImageView(this); cabin.setImageResource(R.drawable.cabin_thumb); cabin.setContentDescription("cabin"); cabin.setOnClickListener(view ->{addObject(Uri.parse("Cabin.sfb"));}); gallery.addView(cabin);*//*        ImageView house = new ImageView(this); house.setImageResource(R.drawable.house_thumb); house.setContentDescription("house"); house.setOnClickListener(view ->{addObject(Uri.parse("House.sfb"));}); gallery.addView(house);*//*        ImageView igloo = new ImageView(this); igloo.setImageResource(R.drawable.igloo_thumb); igloo.setContentDescription("igloo"); igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));}); gallery.addView(igloo);*/
+        gallery.addView(iv);
+
+        iv = new ImageView(this);
+        iv.setImageResource(R.drawable.w2);
+        iv.setContentDescription("watch 1");
+        iv.setOnClickListener(view -> {
+            addObject(getARObjectByJewellCategory(jewellCategory));
+        });
+        gallery.addView(iv);
+
+        iv = new ImageView(this);
+        iv.setImageResource(R.drawable.w3);
+        iv.setContentDescription("watch 3");
+        iv.setOnClickListener(view -> {
+            addObject(getARObjectByJewellCategory(jewellCategory));
+        });
+        gallery.addView(iv);
     }
 
     private void addObject(Uri model) {
