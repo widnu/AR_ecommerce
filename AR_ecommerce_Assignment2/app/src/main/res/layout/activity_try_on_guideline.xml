@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/ActionItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/steps"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#60000000"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/ActionItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/step1" />
+
+        <TextView
+            android:id="@+id/txt_download_refrence_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="60dp"
+            android:onClick="BtnDownloadImage"
+            android:text="@string/download"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp"
+            android:textStyle="bold"></TextView>
+    </androidx.cardview.widget.CardView>
+    <!-- <com.github.barteksc.pdfviewer.PDFView
+         android:id="@+id/pdfv"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:layout_constraintTop_toBottomOf="@+id/textView2"></com.github.barteksc.pdfviewer.PDFView>
+ -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/ActionItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/step2" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@null"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/ActionItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/step3" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/ActionItem"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/step4" />
+    </androidx.cardview.widget.CardView>
+
+
+    <com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular
+        android:id="@+id/img_btn_camera_in_guide"
+        style="@style/ActionItem"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_background"
+        android:drawableLeft="@drawable/ic_photo_camera_black_24dp"
+        android:gravity="center"
+        android:text="Try On"
+        android:textColor="#fff"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>

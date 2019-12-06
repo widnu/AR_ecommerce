@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">AR_ecommerce_Assignment2</string>
+    <string name="app_name">AR_Ecommerce</string>
     <string name="action_settings">Settings</string>
-    <string name="steps">4 Easy Steps To Try AR Watches.</string>
-    <string name="step1">Step 1. Download and print the following PDF document featuring the wristband.
+    <string name="steps">4 Easy Steps To Try AR Jewellery.</string>
+    <string name="step1">Step 1. Download and print the following PDF document featuring the refrence image.
 </string>
-    <string name="step2"> Step 2. Cut out the wristband along the lines.
+    <string name="step2"> Step 2. Cut out the refrence image along the lines.
 </string>
-    <string name="step3">Step 3. Download the AR-Watches app.
+    <string name="step3">Step 3. Wear the refrence image as a watch belt on your hand or else ring image on your finger.
 </string>
-    <string name="step4"> Step 4. Open the app and hover it over your wrist to recognize the wristband and show the 3D models of the watches.</string>
+    <string name="step4"> Step 4. Open the app and hover it over your wrist to recognize the image and show the 3D models of the watches/ring.</string>
 
-
+<string name="download"><u>Download</u></string>
 </resources>

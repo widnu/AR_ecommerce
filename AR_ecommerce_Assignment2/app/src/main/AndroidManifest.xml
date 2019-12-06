@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobile.info.ar_ecommerce_assignment2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
 
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppThemeNoActionBar">
+        <activity android:name=".LandingPageViedo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,14 +21,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListOfItems"
-            android:label="List of Products" />
-        <activity
             android:name=".DetailDescriptionOfItem"
-            android:label="Product details" />
+            android:label="Product details"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".TryOnActivity"
-            android:label="Try item" />
+            android:label="Try item"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:label="AR E-commerce"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ListOfItemDetails"
+            android:label="List of Products"
+            android:theme="@style/AppTheme" />
+        
 
         <activity
             android:name=".sceneform.ARDropRefImgActivity"

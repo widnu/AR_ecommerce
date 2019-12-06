@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:alpha="0.8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="0dp">
+
+        <com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:text="A"
+            android:textColor="@color/colorPrimary"
+            android:textSize="150dp"
+            android:textStyle="bold"></com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular>
+
+        <com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular
+            android:id="@+id/r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:textColor="@color/colorPrimary"
+            android:textSize="150dp"
+            android:textStyle="bold|italic"></com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular>
+
+    </LinearLayout>
+
+    <com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular
+        android:id="@+id/jwellery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jwellery"
+        android:layout_marginLeft="90dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50dp"
+        android:textStyle="bold"></com.mobile.info.ar_ecommerce_assignment2.custom_fonts.MyTextView_Lato_Regular>
+
+    <ImageView
+        android:id="@+id/landing_image"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_ar"></ImageView>
+
+
+</LinearLayout>
