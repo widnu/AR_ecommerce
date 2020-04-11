@@ -46,6 +46,8 @@ public class DetailDescriptionOfItem extends AppCompatActivity {
         title = i.getStringExtra("title");
         desc = i.getStringExtra("desc");
         price = i.getStringExtra("price");
+//        imageId = i.getIntExtra("image", 0);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -67,6 +69,7 @@ public class DetailDescriptionOfItem extends AppCompatActivity {
                 Intent i = new Intent(DetailDescriptionOfItem.this, TryOnActivity.class);
                 i.putExtra("title", title);
                 i.putExtra("desc", desc);
+                i.putExtra("image", image_id);
                 startActivity(i);
 
             }

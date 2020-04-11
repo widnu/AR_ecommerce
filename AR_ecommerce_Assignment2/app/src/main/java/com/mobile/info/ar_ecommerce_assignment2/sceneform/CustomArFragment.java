@@ -13,6 +13,7 @@ public class CustomArFragment extends ArFragment {
         getPlaneDiscoveryController().setInstructionView(null);
         Config config = new Config(session);
         config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
+        config.setFocusMode(Config.FocusMode.AUTO);
         session.configure(config);
         getArSceneView().setupSession(session);
 

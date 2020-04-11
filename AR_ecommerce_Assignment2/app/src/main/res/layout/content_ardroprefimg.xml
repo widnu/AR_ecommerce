@@ -13,20 +13,71 @@
         android:name="com.mobile.info.ar_ecommerce_assignment2.sceneform.CustomArFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gallery_layout_refimg"
         app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintVertical_weight="9" />
+        app:layout_constraintVertical_weight="9"/>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/gallery_layout_refimg"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/sceneform_fragment_refimg"-->
-<!--        app:layout_constraintVertical_chainStyle="spread"-->
-<!--        app:layout_constraintVertical_weight="1"/>-->
+    <LinearLayout
+        android:id="@+id/gallery_layout_refimg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sceneform_fragment_refimg"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageView
+            android:id="@+id/iv0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/w1" />
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/w2" />
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/w3" />
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/w4" />
+
+        <ImageView
+            android:id="@+id/iv4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/w5" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

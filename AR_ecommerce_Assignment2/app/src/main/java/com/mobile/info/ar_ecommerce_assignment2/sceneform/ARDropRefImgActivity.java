@@ -3,6 +3,7 @@ package com.mobile.info.ar_ecommerce_assignment2.sceneform;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ import com.mobile.info.ar_ecommerce_assignment2.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -50,22 +52,27 @@ public class ARDropRefImgActivity extends ARDropActivity {
 
     private String productName = "";
     private String productDesc = "";
+    private int image_id = 0;
 
     private TransformableNode currentNode = null;
     private AnchorNode currentAnchorNode = null;
+
+    private final ArrayList<String> itemName = new ArrayList<>(Arrays.asList("MICHAEL KORS", "MICHAEL KORS", "MICHAEL KORS", "MICHAEL KORS", "BOSS"));
+    private final ArrayList<String> RingitemName = new ArrayList<>(Arrays.asList("Delicacy In White Gold (18k)", "Kew In White Gold (18k)", "Diamond Cluster Ring", "Classic Round Cut Sterling Silver Ring", "Classic Round Cut Sterling Silver Ring Set"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ardroprefimg);
 
-//        initializeGallery();
-
         // get parameters
         shouldAddModel = true;
         Intent intent = getIntent();
         productName = intent.getStringExtra("title");
         productDesc = intent.getStringExtra("desc");
+        image_id = intent.getIntExtra("image", 0);
+
+        initializeGallery();
 
         // manage AR Fragment
         arFragment = (CustomArFragment) getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment_refimg);
@@ -92,8 +99,10 @@ public class ARDropRefImgActivity extends ARDropActivity {
 
             for (AugmentedImage augmentedImage : augmentedImages) {
                 if (augmentedImage.getTrackingState() == TrackingState.TRACKING) {
-                    if (Constants.LOADED_REF_IMAGE_0.equals(augmentedImage.getName()) ) {
-//                        if (Constants.LOADED_REF_IMAGE_0.equals(augmentedImage.getName()) || Constants.LOADED_REF_IMAGE_2.equals(augmentedImage.getName())) {
+//                    if (Constants.LOADED_REF_IMAGE_0.equals(augmentedImage.getName()) ) {
+                    if (Constants.LOADED_REF_IMAGE_0.equals(augmentedImage.getName())
+                            || Constants.LOADED_REF_IMAGE_2.equals(augmentedImage.getName())
+                            || Constants.LOADED_REF_IMAGE_3.equals(augmentedImage.getName())) {
                         if (shouldAddModel) {
                             Uri uri = getARObjectByProductName(productName);
                             placeObject(arFragment, augmentedImage.createAnchor(augmentedImage.getCenterPose()), uri);
@@ -114,6 +123,7 @@ public class ARDropRefImgActivity extends ARDropActivity {
         augmentedImageDatabase.addImage(Constants.LOADED_REF_IMAGE_0, loadAugmentedImage(Constants.LOADED_REF_IMAGE_0));
 //        augmentedImageDatabase.addImage(Constants.LOADED_REF_IMAGE_1, loadAugmentedImage(Constants.LOADED_REF_IMAGE_1));
         augmentedImageDatabase.addImage(Constants.LOADED_REF_IMAGE_2, loadAugmentedImage(Constants.LOADED_REF_IMAGE_2));
+        augmentedImageDatabase.addImage(Constants.LOADED_REF_IMAGE_3, loadAugmentedImage(Constants.LOADED_REF_IMAGE_3));
         config.setAugmentedImageDatabase(augmentedImageDatabase);
         return true;
     }
@@ -147,9 +157,56 @@ public class ARDropRefImgActivity extends ARDropActivity {
         this.currentAnchorNode = anchorNode;
     }
 
-//    private void initializeGallery() {
-//        LinearLayout gallery = findViewById(R.id.gallery_layout_refimg);
-//
+    private void initializeGallery() {
+        LinearLayout gallery = findViewById(R.id.gallery_layout_refimg);
+
+        ImageView iv0 = findViewById(R.id.iv0);
+        ImageView iv1 = findViewById(R.id.iv1);
+        ImageView iv2 = findViewById(R.id.iv2);
+        ImageView iv3 = findViewById(R.id.iv3);
+        ImageView iv4 = findViewById(R.id.iv4);
+
+        Drawable highlight = getResources().getDrawable( R.drawable.highlight);
+
+        if(itemName.contains(productName)){
+            iv0.setImageResource(R.drawable.w1);
+            iv1.setImageResource(R.drawable.w2);
+            iv2.setImageResource(R.drawable.w3);
+            iv3.setImageResource(R.drawable.w4);
+            iv4.setImageResource(R.drawable.w5);
+
+            if(image_id == R.drawable.w1){
+                iv0.setBackground(highlight);
+            }else if(image_id == R.drawable.w2){
+                iv1.setBackground(highlight);
+            }else if(image_id == R.drawable.w3){
+                iv2.setBackground(highlight);
+            }else if(image_id == R.drawable.w4){
+                iv3.setBackground(highlight);
+            }else if(image_id == R.drawable.w5){
+                iv4.setBackground(highlight);
+            }
+        }else if(RingitemName.contains(productName)){
+            iv0.setImageResource(R.drawable.ring1);
+            iv1.setImageResource(R.drawable.ring2);
+            iv2.setImageResource(R.drawable.ring3);
+            iv3.setImageResource(R.drawable.ring4);
+            iv4.setImageResource(R.drawable.ring5);
+
+            if(image_id == R.drawable.ring1){
+                iv0.setBackground(highlight);
+            }else if(image_id == R.drawable.ring2){
+                iv1.setBackground(highlight);
+            }else if(image_id == R.drawable.ring3){
+                iv2.setBackground(highlight);
+            }else if(image_id == R.drawable.ring4){
+                iv3.setBackground(highlight);
+            }else if(image_id == R.drawable.ring5){
+                iv4.setBackground(highlight);
+            }
+        }
+
+
 //        ImageView iv0 = new ImageView(this);
 //        iv0.setImageResource(R.drawable.w1);
 //        iv0.setContentDescription("watch 1");
@@ -182,7 +239,23 @@ public class ARDropRefImgActivity extends ARDropActivity {
 ////            addObject(getARObjectByJewellCategory(jewellCategory));
 //        });
 //        gallery.addView(iv2);
-//    }
+//
+//        ImageView iv3 = new ImageView(this);
+//        iv3.setImageResource(R.drawable.w4);
+//        iv3.setContentDescription("watch 4");
+//        iv3.setOnClickListener(view -> {
+////            addObject(getARObjectByJewellCategory(jewellCategory));
+//        });
+//        gallery.addView(iv3);
+//
+//        ImageView iv4 = new ImageView(this);
+//        iv4.setImageResource(R.drawable.w5);
+//        iv4.setContentDescription("watch 5");
+//        iv4.setOnClickListener(view -> {
+////            addObject(getARObjectByJewellCategory(jewellCategory));
+//        });
+//        gallery.addView(iv4);
+    }
 
     private void onClear() {
         List<Node> children = new ArrayList<>(arFragment.getArSceneView().getScene().getChildren());

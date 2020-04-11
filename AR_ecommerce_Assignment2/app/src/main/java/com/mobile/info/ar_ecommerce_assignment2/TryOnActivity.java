@@ -29,6 +29,7 @@ public class TryOnActivity extends AppCompatActivity
     Bitmap anImage;
     String title;
     String desc;
+    int image_id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class TryOnActivity extends AppCompatActivity
         Intent i = getIntent();
         title = i.getStringExtra("title");
         desc = i.getStringExtra("desc");
+        image_id = i.getIntExtra("image", 0);
 
 //        Toast.makeText(getApplicationContext(), "title=" + title + ", desc=" + desc, Toast.LENGTH_LONG).show();
 
@@ -58,6 +60,7 @@ public class TryOnActivity extends AppCompatActivity
                 Intent i = new Intent(TryOnActivity.this, ARDropRefImgActivity.class);
                 i.putExtra("title", title);
                 i.putExtra("desc", desc);
+                i.putExtra("image", image_id);
                 startActivity(i);
 
             }
